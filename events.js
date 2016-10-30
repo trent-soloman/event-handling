@@ -50,15 +50,17 @@ function three () {
   three.addEventListener('mouseleave', makeWhite)
 }
 
-function four () {
-  // First, we have to find the element:
-  var four = document.getElementById('four')
+function four() {
 
-  // Next, we add an event listener to it:
-  four.addEventListener('click', makeYellow)
+var four = document.getElementById('four')
 
-  // Finally, we add one to make the colour white again
-  four.addEventListener('mouseleave', makeWhite)
+four.addEventListener('click', toggleYellow)
+
+function toggleYellow () {
+
+  four.classList.toggle('yellow')
+}
+
 }
 
 // Changes the background color of event's target
@@ -72,10 +74,6 @@ function makeGreen (evt) {
 
 function makeRed (evt) {
   evt.target.style.backgroundColor = 'red'
-}
-
-function makeYellow (evt) {
-  evt.target.style.backgroundColor = 'yellow'
 }
 
 function makeWhite (evt) {
